@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Add New Post</h1>
+        <center><a href="/blog/" class="btn">Back To Blog</a></center>
+        <form method="POST" action="{{ url_for('add') }}">  <!-- Добавлен method="POST" -->
+    <label>Title</label>
+    <input type="text" name="title" required>  <!-- Исправлено type= text" → type="text" -->
+    <br>
+    <label>Content</label>
+    <textarea rows="10" name="content" required></textarea>
+    <br>
+    <button type="submit">Create Post</button>
+</form>
+    </div>
+

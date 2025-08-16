@@ -1,0 +1,24 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "post" (
+	"id"	INTEGER,
+	"title"	TEXT NOT NULL,
+	"content"	TEXT NOT NULL,
+	"author_id"	,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	"id"	INTEGER,
+	"username"	TEXT NOT NULL UNIQUE,
+	"password_hash"	TEXT NOT NULL,
+	"email"	TEXT,
+	"data"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+INSERT INTO "post" VALUES (1,'Понедельник','В школе взорвалсья туалет',1);
+INSERT INTO "post" VALUES (2,'Вторник','Закрыли вход в туалеты',1);
+INSERT INTO "post" VALUES (3,'Среда','Туалет починили',2);
+INSERT INTO "post" VALUES (4,'Четверг','Была драка в коридоре',3);
+INSERT INTO "post" VALUES (5,'Пятница','Была просрочка, а не еда',4);
+INSERT INTO "post" VALUES (6,'Суббота','Гулял на улице до вечера',5);
+INSERT INTO "post" VALUES (7,'Воскресенье','Опять забыл сделать домашку',3);
+COMMIT;
